@@ -1,0 +1,151 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<title>Teaching</title>
+<style type='text/css'>
+BODY
+{
+    COLOR: #000050;
+    FONT-FAMILY: Times;
+    BACKGROUND-COLOR: white
+}
+A
+{
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none;
+    COLOR: purple;
+}
+A:hover
+{
+    COLOR: plum;
+    TEXT-DECORATION: none
+}
+A:active
+{
+    COLOR: navy
+}
+TD.left
+{
+    BACKGROUND-COLOR: white;
+    WIDTH: 20%;
+    VERTICAL-ALIGN: top;
+    TEXT-ALIGN: right;
+}
+TD.right
+{
+    BACKGROUND-COLOR: lavender;
+    WIDTH: 80%;
+    VERTICAL-ALIGN: top;
+}
+P
+{
+    MARGIN-LEFT: 0in;
+    FONT-SIZE: small;
+}
+P.section
+{
+    MARGIN-RIGHT: 0in;
+    FONT-SIZE: medium;
+    FONT-WEIGHT: bold;
+}
+</style>
+</head>
+
+<body>
+<table border="0" cellpadding="12" cellspacing="4" width="100%" style="font-size: small">
+  <TR>
+    <TD class="left">
+      <P class="section">Classes</P>
+    </TD>
+    <TD class="right">
+      <P> <A HREF="http://www.cslu.ogi.edu/~hollingk/NLP-w10.html">NLP Winter'10</A>
+      </P>
+    </TD>
+  </TR>
+  <TR>
+    <TD class="left">
+      <P class="section">Lectures</P>
+    </TD>
+    <TD class="right">
+      <P>
+      For <A HREF="http://www.cslu.ogi.edu/people/roark/courses/cse562-NLP/cse562w07.html">NLP</A>:
+         <ul>
+         <li>Syntax in Machine Translation:
+             [<A HREF="http://www.cslu.ogi.edu/~hollingk/presentations/NLP_lec17.pdf">pdf</A>]
+         </ul>
+      </P>
+      <P>
+      For <A HREF="http://www.cslu.ogi.edu/people/roark/courses/cse554-TLS/cse554w09.html">Text-Based Language Processing Systems</A>:
+        <ul>
+        <li>Introduction to Machine Translation:
+            [<A HREF="http://www.cslu.ogi.edu/~hollingk/presentations/TLS_lec4.pdf">pdf</A>]
+        </ul>
+      </P>
+      <P>
+      For <A HREF="http://www.cslu.ogi.edu/people/roark/courses/cse555-BLS/cse555w08.html">Biological and Linguistic Sequence Analysis</A>:
+         <ul>
+         <li>On approximate matching algorithms:
+                  [<A HREF="http://www.cslu.ogi.edu/~hollingk/presentations/BLS_lec7.pdf">pdf</A>]
+         </ul>
+      </P>
+    </TD>
+  </TR>  
+  <TR>
+    <TD class="left">
+      <P class="section">Tutorials</P>
+    </TD>
+    <TD class="right">
+      <P>For <A HREF="http://www.cslu.ogi.edu/people/roark/courses/cse562-NLP/cse562w07.html">NLP</A>:
+          <ul>
+          <li>Text Processing in Linux:
+             [<A HREF="http://www.cslu.ogi.edu/~hollingk/presentations/awksed_tutorial_07.ppt">ppt</A>]
+             [<A HREF="http://www.cslu.ogi.edu/~hollingk/presentations/awksed_tutorial_07.pdf">pdf</A>]
+          <li>Data Structures for NLP:
+             [<A HREF="http://www.cslu.ogi.edu/~hollingk/presentations/data_struct_tutorial_07.ppt">ppt</A>]
+             [<A HREF="http://www.cslu.ogi.edu/~hollingk/presentations/data_struct_tutorial_07.pdf">pdf</A>], and associated code: 
+             <A HREF="http://www.cslu.ogi.edu/~hollingk/code/nlp.c">nlp.c</A>
+          <li>Combined into a single lecture:
+             [<A HREF="http://www.cslu.ogi.edu/~hollingk/presentations/regexp_structs_tutorial_08.ppt">ppt</A>]
+             [<A HREF="http://www.cslu.ogi.edu/~hollingk/presentations/regexp_structs_tutorial_08.pdf">pdf</A>]
+          </ul>
+      </P>
+      <P>
+      For <A HREF="http://www.cslu.ogi.edu/~sproatr/Courses/CompLing/">Computational Linguistics</A>:
+        <ul>
+        <li>Unix Scripting:
+             [<A HREF="http://www.cslu.ogi.edu/~hollingk/presentations/awksed_tutorial_09.ppt">ppt</A>]
+             [<A HREF="http://www.cslu.ogi.edu/~hollingk/presentations/awksed_tutorial_09.pdf">pdf</A>]
+        <li>On <A HREF="http://www.cslu.ogi.edu/~hollingk/JHU_tutorial.html">OpenFST
+        </ul>
+      </P>
+      <P>
+      For the <A HREF="http://www.clsp.jhu.edu/workshops/ws08/summerschool.php">JHU Summer School on Human Language Technology</A>:
+         <ul>
+         <li><A HREF="http://www.clsp.jhu.edu/wiki2/Pronunciations_Lab">Lab session</A> on Pronunciation Modeling using AT&amp;T's FSM library.
+         </ul>
+      </P>
+      <P>
+      For <A HREF="http://www.cse.ogi.edu/class/cse560/">Artificial Intelligence</A> (co-taught with Fan Yang):
+         <ul>
+         <li>On Tcl:
+             [<A HREF="http://www.cslu.ogi.edu/~hollingk/presentations/tcl_tutorial.ppt">ppt</A>]
+         </ul> 
+      </P>
+    </TD>
+  </TR>
+  <TR>
+  <TR>
+    <TD class="left">
+    </TD>
+    <TD class="right">
+      <P>
+         <A HREF="http://www.cslu.ogi.edu/~hollingk/">Back</A> home.
+      </P>
+    </TD>
+  </TR>
+
+</table></body>
+
+</html>

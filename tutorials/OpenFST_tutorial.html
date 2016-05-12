@@ -1,0 +1,233 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Pronunciations Lab" />
+
+		<title>Pronunciations Lab using OpenFST</title>
+		
+		<link rel='stylesheet' type='text/css' href='css/wikistandard.css' />
+<link rel='stylesheet' type='text/css' media='print' href='css/wikiprintable.css' />
+		<!--[if lt IE 5.5000]><![endif]-->
+		<!--[if IE 5.5000]><![endif]-->
+		<!--[if IE 6]><![endif]-->
+		<!--[if IE 7]><![endif]-->
+		<!--[if lt IE 7]>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		
+		
+		
+		<!-- Head Scripts -->
+			</head>
+<body  class="ns-0 ltr">
+<div id="globalWrapper">
+<div id="column-content">
+<div id="content">
+<h1 class="firstHeading">Pronunciations Lab -- Using OpenFST</h1>
+<div id="bodyContent">
+</td></tr></table>
+
+<h1>Overview </h1>
+
+<p>In this lab we'll be learning about pronunciation modeling with finite
+state transducers. 
+</p><p>Begin by downloading <a href="code/pronun_lab.tgz">pronun_lab.tgz</a>.
+Then unzip the tarball for the lab into your working directory:
+</p>
+<pre>
+  tar -xzvf pronun_lab.tgz <br>
+  cd pronun_lab/ <br>
+</pre>
+Find the OpenFST tools on your machine:
+<pre>
+  which fstcompile
+</pre>
+or <a href="http://www.openfst.org/">download them</a>. Add the location of the OpenFST tools to your PATH variable:
+<pre>  export PATH=/home/$username/bin/OpenFST/fst/bin/:$PATH</pre>
+
+<h1>Finite-State Transducer Dictionaries </h1>
+<h2> Grapheme Dictionary </h2>
+
+<p>For this first part of the lab, we are going to pretend that letters are
+the same as phonemes, and map (English) words to letters to build a
+fake-phonetic dictionary (a grapheme dictionary).</p>
+
+<p>Consider the toy wordlist in <b>toy.wordlist</b>. Using this wordlist,
+and pretending that each letter represents a phone, we can create a fake
+pronunciation dictionary, <b>toy.lex</b>. Take a look at this
+dictionary, and note that it can be easily generated from our wordlist.
+(You may also note that our dictionary contains a few
+special symbols: &lt;s&gt; and &lt;/s&gt;, which indicate the start and
+end of a sentence, and &lt;unk&gt;, which indicates an unknown token. These
+special symbols are given special "pronunciation" symbols as well.)</p>
+
+<p>From this dictionary, we would like to compile a transducer that maps
+from words to letters and vice versa.  First, we can produce a
+text format for the transducer <b>toy.fsm.txt</b>, with words on
+the <em>input</em> side, and letters on the <em>output</em> side. Take a
+look at <b>toy.fsm.txt</b>, and note that it can also be easily
+generated from our dictionary file.</p>
+
+<h3> Compiling &amp; Printing Transducers </h3>
+
+<p>For this part of the lab we'll be using the <a href="http://www.openfst.org/">OpenFST</a> tools.
+Hopefully you'll be able to follow our examples to complete the lab,
+but you can also use their "Quick Tour" for help in using these tools. In particular, we will be using <code>fstcompile</code> and <code>fstcompose</code>.</p>
+
+<p>Draw the automata represented by our toy.fsm.txt file. Note that each line in the <b>toy.fsm.txt</b> file represents a transition from state to state. States are identified by number (the first two columns in the file), the transition
+input labels are in the third column, and the output labels are in the fourth
+column. <br> <br> <br></p>
+
+<p>Compile the transducer using <code>fstcompile</code>, using our
+<b>toy.wordlist</b> and <b>toy.letterlist</b> files, as follows:</p>
+<pre>
+  fstcompile --isymbols=toy.wordlist --osymbols=toy.letterlist --keep_isymbols --keep_osymbols toy.fsm.txt toy.trans.fst
+</pre>
+<p>The OpenFST toolkit also includes some tools for generating visual representations of the automata and transducers.</p>
+<pre>
+  fstdraw --isymbols=toy.wordlist --osymbols=toy.letterlist toy.trans.fst | ./dot -Tps &gt; toy.ps <br>
+  ps2pdf toy.ps
+</pre>
+<p>Take a look at <b>toy.pdf</b>.</p>
+<pre>
+  acroread toy.pdf &amp;
+</pre>
+<p>Does it look right? Is there anything weird about it? <br> <br> <br></p>
+
+<h3> Transducers as Acceptors (Automata) </h3>
+
+<p>One thing that can be done with transducers is to project them onto
+either input labels or output labels, with <code>fstproject</code>.  This
+turns the transducer into an acceptor that preserves only the labels
+on the specified side. Note that order of the transducers matter, since it 
+is matching input and output labels.</p>
+
+<p>Compose our transducer with an example string:</p>
+<pre>
+  echo "John Jacob Smith" | ./str2fst.pl toy.wordlist | \
+    fstcompile --isymbols=toy.wordlist --osymbols=toy.wordlist --keep_isymbols --keep_osymbols | \
+    fstcompose - toy.trans.fst string1.trans.fst
+</pre>
+
+<p>Now <b>string1.trans.fst</b> is a tiny transducer just for our example string, and we can use <code>fstproject</code> to turn our transducer into a word-acceptor:</p>
+
+<pre>
+  fstproject string1.trans.fst | fstprint --isymbols=toy.wordlist
+</pre>
+<p>or a letter-acceptor:</p>
+<pre>
+  fstproject --project_output string1.trans.fst | fstprint --isymbols=toy.letterlist
+</pre>
+<p>by <code>fstproject</code>ing on either input or output labels.
+
+<p>What happens if you <code>fstcompose</code> <b>toy.trans.fst</b> with
+"John Jacob Jingleheimer Schmidt"?</p>
+<pre>
+  echo "John Jacob Jingleheimer Schmidt" | ./str2fst.pl toy.wordlist | \
+    fstcompile --isymbols=toy.wordlist --osymbols=toy.wordlist --keep_isymbols --keep_osymbols | \
+    fstcompose - toy.trans.fst | fstproject --project_output - | fstdraw | ./dot -Tps > jjjs.ps<br>
+  ps2pdf jjjs.ps<br>
+  acroread jjjs.pdf &amp;
+</pre>
+<p>You should get an FST that has the following arcs: "J o h n &lt;eps&gt; J a c o b &lt;eps&gt; &lt;unk&gt; &lt;eps&gt; &lt;unk&gt;", because our transducer accepts "John" and "Jacob" as known input tokens but can only accept "Jingleheimer" and "Schmidt" as unknown ("unk") tokens.</p>
+
+<h2> Editing Transducers </h2>
+
+<p>Now, let's improve our transducer a bit. Add "Jingleheimer" and "Schmidt"
+to our transducer by editing the <b>toy.fsm.txt</b> file.
+(You could also add your name, or any other words you'd like!) Don't forget
+to update the toy.wordlist and toy.letterlist files as well. It'll be faster
+if you use some scripting to update the files, but you could edit them by hand
+as well... <br> <br> <br></p>
+
+<p>Once you've done that, <code>fstcompile</code> your new transducer and use
+<code>fstdraw</code> to take a look at it.</p>
+<pre>
+  fstcompile ... toy.fsm.txt toy2.trans.fst <br>
+  fstdraw | ./dot -Tps > toy2.ps
+</pre>
+<p>(Fill in the blanks on your own, using what you've learned about the OpenFST tools!)</p>
+
+<p>Now what happens when you <code>fstcompose</code> <b>toy2.trans.fst</b> with
+"John Jacob Jingleheimer Schmidt", then call <code>farprintstrings</code>?</p>
+<pre>
+  echo "John Jacob Jingleheimer Schmidt" | ./str2fst.pl toy.wordlist | \
+    fstcompile ... | fstcompose - toy2.trans.fst | fstproject --project_output - | fstdraw | ./dot -Tps > jjjs2.ps<br>
+  ps2pdf jjjs2.ps<br>
+  acroread jjjs2.pdf &amp;
+</pre>
+<p>(Once again, fill in the blanks on your own...!)</p>
+
+<h2> Larger Transducers </h2>
+
+<p>We could use a much larger wordlist, <b>wsj.wordlist</b>, (extracted from sections 2-21 of the Penn Wall St. Treebank) to build a larger word to letter transducer for a larger vocabulary:</p>
+<pre>
+  fstcompile --isymbols=wsj.wordlist --osymbols=wsj.letterlist wsj.fsm.txt wsj.trans.fst
+</pre>
+
+<p>How many states are in this FST? (Figure this out from the <b>wsj.fsm.txt</b> file, <em>not</em> by trying to <code>fstdraw</code> the transducer!) How many more states is that than our toy FSTs? <br> <br> <br></p>
+
+<p>Even though the WSJ FST is much larger, it doesn't help us a lot with our unknown-word problem from before:</p>
+<pre>
+  echo "John Jacob Jingleheimer Schmidt" | ./str2fst.pl wsj.wordlist | \
+    fstcompile --isymbols=wsj.wordlist --osymbols=wsj.wordlist --keep_isymbols --keep_osymbols | \
+    fstcompose - wsj.trans.fst | fstproject --project_output - | fstdraw | ./dot -Tps > jjjs3.ps<br>
+  ps2pdf jjjs3.ps<br>
+  acroread jjjs3.pdf &amp;
+</pre>
+
+<p>Why do we still have an &lt;unk&gt; in our output? <br> <br> <br></p>
+
+<h2> Phonetic Dictionary </h2>
+
+<p>Now we will produce a <em>real</em> pronunciation dictionary!</p>
+
+<p>Take a look at the PronLex Dictionary, <b>pronlex_arpabet.txt.gz</b>.
+It is in essentially the same format as our toy dictionary <b>toy.lex</b>, except there are phones instead of letters. The phones are the space-delimited characters starting in the second column.</p>
+
+<p>Find the PronLex dictionary entry for the word 'fulllength.'  Note that there are six pronunciations provided for this word. Can you find other kinds of ambiguity in this dictionary that do not exist in our toy dictionary from Part 1 of the lab? <br> <br> <br></p>
+
+<p>Create a wordlist and a phonelist from your PronLex dictionary.  (Don't forget our special symbols, &lt;s&gt;, etc.). (Yes, this will require some scripting. If you need help, check out my <a href="http://www.umiacs.umd.edu/~hollingk/CL_tutorial.html">unix scripting tutorial</a>.) <br> <br> <br></p>
+
+<p>Convert our dictionary into FST text-format:</p>
+<pre>
+  zcat pronlex_arpabet.txt.gz | pronlex2fst.pl &gt; pronlex.fsm.txt
+</pre>
+
+<p>Then compile it into a transducer, which we'll call <b>pronlex.trans.fst</b>.
+(Please <em>don't</em> try to optimize (i.e. invert, push, determinize) <b>pronlex.trans.fst</b>.)</p>
+<pre>
+  fstcompile --isymbols=pronlex.wordlist --osymbols=pronlex.phonelist --keep_isymbols --keep_osymbols pronlex.fsm.txt pronlex.trans.fst
+</pre>
+
+<p>Now compile the following string using this new FST: <br>
+"july 3rd is the last day of summer school for the 2008 clsp johns hopkins workshop attendees"<br>
+(Note that the PronLex dictionary always expects only lowercase letters.)</p>
+<pre>
+  echo &lt;your string&gt; | ./str2fst.pl pronlex.wordlist | \
+    fstcompile --isymbols=pronlex.wordlist --osymbols=pronlex.wordlist --keep_isymbols --keep_osymbols | \
+    fstcompose - pronlex.trans.fst | fstproject --project_output - | fstdraw | ./dot -Tps > pronlex1.ps<br>
+  ps2pdf pronlex1.ps<br>
+  acroread pronlex1.pdf &amp;
+</pre>
+
+<p>(You'll have to zoom in to see the transducer in the pdf file; you may find it more convenient to use <code>fstprint</code> rather than fstdraw to "look at" the transducer.</p>
+
+<p>Is there more than one resulting phone string? You can tell where the ambiguity is in the string by looking at the places where there is more than one path through the tranducer. You could also try using <code>fstrandgen</code>:</p>
+<pre>
+  fstrandgen --help
+</pre>
+<p>(Try to figure this one out on your own.)</p>
+
+<p>Could you have predicted, just from your pronlex_arpabet.txt file, that
+there would be more than one possible phone string? What does that tell us about pronunciation modeling?<br> <br> <br></p>
+
+<p>Now go back and look at the output from <code>str2fst.pl</code>. Are many words "&lt;unk&gt;"?  Which ones?  Can you explain for some of them why they wouldn't be in a speech recognizer dictionary? <br> <br> <br></p>
+
+
+
+</div>
+
+</body></html>

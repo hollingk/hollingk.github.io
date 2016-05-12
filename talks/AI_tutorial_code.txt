@@ -1,0 +1,1 @@
+This code has been moved to: www.cslu.ogi.edu/~hollingk/code/tcl_tutorial_code.txt

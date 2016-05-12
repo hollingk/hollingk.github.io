@@ -1,0 +1,327 @@
+::::::::::::::
+hello.tcl
+::::::::::::::
+
+wm withdraw .
+console show
+
+puts "Hello, world!"
+
+::::::::::::::
+myList.tcl
+::::::::::::::
+wm withdraw .
+console show
+
+set a 1
+set b 2
+set c 3
+
+set myList [list a b c]
+puts $myList
+set myList "a b c"
+puts $myList
+set myList {a b c}
+puts $myList
+set myList [list $a $b $c]
+puts $myList
+set myList {$a $b $c}
+puts $myList
+set myList [list a   b   c]
+puts $myList
+set myList "a   b   c"
+puts $myList
+set myList {a   b   c}
+puts $myList
+
+::::::::::::::
+tutorial.tcl
+::::::::::::::
+# Tcl Tutorial
+# CSE 560 - Aritificial Intelligence
+# 2 October 2003
+# Questions? e-mail Fan at fly@cslu.ogi.edu
+#            or Kristy at hollingk@cslu.ogi.edu
+#
+# run with wish84.exe
+
+wm withdraw .
+console show
+
+# basic operations
+puts -nonewline "Hello, world!"
+puts "!!"
+set income 32000
+puts "income was set to $income"
+set a 10.0
+puts "a = $a"
+expr $a + 5 ;#(result isn't stored anywhere)
+puts "a + 5 = [expr $a + 5]"
+expr int($a/3) ;#(result isn't stored anywhere)
+puts "a/3 = [expr int($a/3)]"
+
+
+# useful commands
+if {![info exists num]} {
+    set num 0
+}
+incr num
+puts "num defined and incremented: $num"
+unset num
+puts -nonewline "num destroyed - does num exist?: "
+puts [info exists num]
+
+
+# if then else
+set income 32000
+if {$income > 30000} {
+    puts "if statement: $income -- high"
+} elseif {$income > 20000} {
+    puts "elseif statement: $income -- middle"
+} else {
+    puts "else statement: $income -- low"
+}
+# while loops
+set i 0
+while {$i < 10} {
+    puts "while loop: I am at count $i"
+    incr i
+}
+# for loops
+for {set i 0} {$i < 10} {incr i} {
+    puts "for loop: I am at count $i and going up"
+    after 300
+    update
+}
+for {set i 10} {$i > 0} {set i [expr $i - 1]} {
+    puts "for loop: I am at count $i and going down"
+    after 300
+    update
+}
+# foreach loops
+set lstColors {red orange yellow green blue purple}
+foreach c $lstColors {
+    puts "iterating through lstColors with foreach: $c"
+}
+foreach {a b c} $lstColors {
+    puts "$c--$b--$a"
+}
+set lstFoods {apple orange banana lime berry grape}
+foreach f $lstFoods c $lstColors {
+    puts "a $f is usually $c"
+}
+foreach {a b} $lstFoods c $lstColors {
+    puts "$a & $b are foods. $c is a color."
+}
+
+
+# procedure calls (embedded commands)
+set b [expr $a + 5]
+puts "After using an embedded command, the value of b is $b"
+
+# create your own procedure (called by value only)
+proc foo {a b c} {
+    return [expr $a*$b-$c]
+}
+puts "foo returned: [expr [foo 2 3 4] + 5]"
+proc bar { } {
+    puts "I'm in the bar procedure"
+}
+bar
+
+
+# local and global variables
+set a 5
+set b 6
+set c 7
+proc var_scope { } {
+    global a
+    set a 3
+    set b 2
+    set ::c 1
+}
+var_scope
+puts "After var_scope, the value for a b c is: $a $b $c"
+
+
+# lists in Tcl
+set myList [list a b c]
+puts "myList created with \[list\]: $myList"
+set myList "a b c"
+puts "myList created with \"\": $myList"
+set myList {a b c}
+puts "myList created with {}: $myList"
+set myList [list $a $b $c]
+puts "myList created with \[list\]: $myList"
+set myList {$a $b $c}
+puts "myList created with {}: $myList"
+set myList [list a   b   c]
+puts "myList created with \[list\]: $myList"
+set myList "a   b   c"
+puts "myList created with \"\": $myList"
+set s Hello
+puts "The length of $s is [string length $s]."
+puts {The length of $s is [string length $s].}
+
+
+# list operations
+set lstStudents [list "Fan" "Kristy" "Susan"]
+puts "lstStudents(0): [lindex $lstStudents 0]"
+puts "lstStudents(end): [lindex $lstStudents end]"
+puts "llength \$lstStudents: [llength $lstStudents]"
+puts "llength lstStudents: [llength lstStudents]"
+#lappend $lstStudents "Peter" (wrong!)
+lappend lstStudents "Peter"
+puts "lstStudents after first lappend: $lstStudents"
+#puts [linsert lstStudents 2 "Tom"]  (wrong!)
+linsert $lstStudents 2 "Tom"
+puts "lstStudents after first linsert: $lstStudents"
+set lstStudents [linsert $lstStudents 2 "Tom"]
+puts "lstStudents after second linsert: $lstStudents"
+set lstStudents [lreplace $lstStudents 3 3 "Rachel"]
+puts "lstStudents after second lappend: $lstStudents"
+set lstStudents [lreplace $lstStudents end end]
+puts "lstStudents after third lappend: $lstStudents"
+set lstStudents [lsort -ascii $lstStudents]
+puts "lstStudents after lsort: $lstStudents"
+puts "result of lsearch: [lsearch $lstStudents "Peter"]"
+set strStudents [join $lstStudents]           ;#(convert list to string)
+set lstStudentsCopy [split $strStudents " "]  ;#(convert string to list)
+
+
+# lists of lists
+set a [list [list x y z]]
+puts "lindex 0: [lindex $a 0]"
+puts "lindex \[lindex 0\] 1: [lindex [lindex $a 0] 1]"
+puts "lindex \[lindex 1\] 0: [lindex [lindex $a 1] 0]"
+set a [list x [list [list y] [list z]]]
+set arg1 [list g [list f [list h [list i X]]] [list r Y] k]
+set arg2 [list g [list f [list h [list i Y]]] [list r b] L]
+set both [list $arg1 $arg2]
+puts $both
+
+
+
+# array operations
+set color(rose) red
+set color(sky) blue
+set color(medal) gold
+set color(leaves) green
+set color(blackboard) black
+#(test if an array with the name "color" exists):
+puts "does color array exist?: [array exists color]"
+puts "does colour array exist?: [array exists colour]"
+#(return a list of the index strings):
+puts "indexes in color array: [array names color]"
+foreach item [array names color] {
+    puts "iterating through array: $item is $color($item)"
+}
+set lstColor [array get color]                ;#(convert array to list)
+array set color $lstColor                     ;#(convert list to array)
+
+
+# regular expressions
+set stmt "Fan is one of Shania's fans"
+regsub -nocase "fan" $stmt "Kristy" newStmt
+puts "newStmt after first regsub: $newStmt"
+regsub -nocase -all "fan" $stmt "Kristy" newStmt
+puts "newStmt after second regsub: $newStmt"
+puts "result of regexp: [regexp -nocase "fan" $stmt]"
+puts "result of format: [format "%s is a %d-year-old" Fan 26]"
+
+
+# string operations
+set statement "    Fan is a student    "
+puts "statement: |$statement|"
+set statement [string trim $statement]
+puts "trim: |$statement|"
+puts "length \$statement: [string length $statement]"
+puts "length statement: [string length statement]"
+puts "toupper: [string toupper $statement]"
+               #string tolower
+puts "index 4: [string index $statement 4]"
+puts "index end: [string index $statement end]"
+puts "first \"is\" \$statement: [string first "is" $statement]"
+                                #string last
+puts "first \$statement \"is\": [string first $statement \"is\"]"
+puts "range 4 end: [string range $statement 4 end]"
+puts "replace 9 end: [string replace $statement 9 end "professor"]"
+puts "match: [string match \"*student\" $statement]" ;#(* ? [])
+
+
+# file operations
+set fRead [open source.txt r]
+set fWrite [open target.txt w]
+while {![eof $fRead]} {
+    set strLine [gets $fRead] ;#or "gets $fRead strLine"
+    regsub -nocase -all "fan" $strLine "kristy" strLine
+    puts $fWrite $strLine
+}
+puts "file operations complete on source.txt and target.txt"
+close $fRead
+close $fWrite
+
+
+# miscellaneous operations
+set Script {
+    set number1 17
+    set number2 25
+    set result [expr $number1 + $number2]
+    puts $result
+}
+puts -nonewline "delayed evaluation of Script: "
+eval $Script
+update
+
+tk_messageBox -message "run to here" -type ok
+
+puts "All done! Type 'exit'."
+
+::::::::::::::
+var_scope.tcl
+::::::::::::::
+wm withdraw .
+console show
+
+set a 5
+set b 6
+set c 7
+proc var_scope {} {
+    global a
+    set a 3       ;#set global variable
+    set b 2       ;#set local variable
+    set ::c 1     ;#set global variable
+    set c 0       ;#set local variable
+
+    var_scope2 $a ;#pass value of a
+    var_scope3
+
+    puts "values of a b c in var_scope: $a $b $c"
+    # => output will be 10 2 0
+}
+
+proc var_scope2 {a} {
+    set a 8       ;#set local variable
+    #global a     ;#can't declare a variable to be global
+                   #    if it has already been used in the procedure
+    global c      ;#global declaration doesn't need to be first statement
+                   #    in procedure
+    set c 9       ;#set global variable
+
+    puts "values of a c in var_scope2: $a $c"
+    # => output will be 8 9
+}
+
+proc var_scope3 {} {
+    global a
+    unset a
+    #puts "value of a in var_scope3: $a"  ;#causes error
+    set a 10      ;#set global variable
+
+    puts "value  of a in var_scope3: $a"
+    # => output will be 10
+}
+
+var_scope
+puts "values of a b c outside of procedures: $a $b $c"
+# => output will be 10 6 9

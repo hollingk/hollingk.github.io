@@ -1,0 +1,196 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<title>Kristy Hollingshead</title>
+<style type='text/css'>
+BODY
+{
+    COLOR: #000050;
+    FONT-FAMILY: Times;
+    BACKGROUND-COLOR: lavender
+}
+A
+{
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none;
+    COLOR: purple;
+}
+A:hover
+{
+    COLOR: plum;
+    TEXT-DECORATION: none
+}
+A:active
+{
+    COLOR: navy
+}
+TD.left
+{
+    BACKGROUND-COLOR: lavender;
+    WIDTH: 15%;
+    VERTICAL-ALIGN: top;
+    TEXT-ALIGN: right;
+}
+TD.right
+{
+    BACKGROUND-COLOR: white;
+    WIDTH: 85%;
+    VERTICAL-ALIGN: top;
+}
+P
+{
+    MARGIN-LEFT: 0in;
+    FONT-SIZE: small;
+}
+P.section
+{
+    MARGIN-RIGHT: 0in;
+    FONT-SIZE: medium;
+    FONT-WEIGHT: bold;
+}
+</style>
+</head>
+
+<body>
+<table border="0" cellpadding="12" cellspacing="4" width="100%" style="font-size: small">
+  <TR>
+    <TD class="left">
+      <img border="0" src="images/DandK.crop2.jpg" alt="picture of me">
+    </TD>
+    <TD class="right">
+      <P style="font-size: large; margin-top: 0.5cm;"><b>Kristy Hollingshead</b>, PhD
+      <blockquote>
+        <P style="font-size: medium;">
+         <A HREF="http://www.cslu.ogi.edu">Center for Spoken Language Understanding (CSLU)</A>
+         <BR><A HREF="http://www.ogi.edu">Department of Science &amp; Engineering</A>
+         <BR><A HREF="http://www.ohsu.edu">Oregon Health &amp; Science University (OHSU)</A>
+        </P>
+      </blockquote>
+      <P>(currently in transit to University of Maryland - College Park)
+         <BR>old address: 20000 NW Walker Road, Beaverton, Oregon 97006, fax: 503-748-1306
+         <BR>e-mail:&nbsp;&nbsp; <style type="text/css"> span.flipify { unicode-bidi:bidi-override;  direction: rtl; }</style><span class="flipify">u&nbsp; d&nbsp; e&nbsp; .&nbsp; i&nbsp; g&nbsp; o&nbsp; .&nbsp; u&nbsp; l&nbsp; s&nbsp; c&nbsp; ta&nbsp; k&nbsp; g&nbsp; n&nbsp; i&nbsp; l&nbsp; l&nbsp; o&nbsp; h</span>
+      </P>
+      
+    </TD>
+  </TR>
+  <TR>
+    <TD class="left">
+      <P class="section">Research Interests</P>
+    </TD>
+    <TD class="right">
+      <P>Key words: parsing, evaluation, machine translation
+      <P>Most generally, I am interested in the syntactic structure of text and how that structure can be used to improve machine translation (in particular), or information extraction or question-answering. More specifically, I am interested in using finite-state parsing methods to approximate context-free methods, searching for a balance between accuracy and efficiency. Related areas of interest are multi-pass parsing and parsing evaluation methods.</P>
+      <P>Advisor: <A HREF="http://www.cslu.ogi.edu/people/roark/">Prof. Brian Roark</A></P>
+    </TD>
+  </TR>
+  <TR>
+    <TD class="left">
+      <P class="section">Publications</P>
+    </TD>
+    <TD class="right">
+      <P>Kristy Hollingshead. 2010. <A HREF="publications/hollingshead10_phd.pdf">Formalizing the use and characteristics of constraints in pipeline systems</a>. PhD thesis, Oregon Health &amp; Science University.
+      <P>Ting Qian, Kristy Hollingshead, Su-youn Yoon, Kyoung-young Kim, and Richard Sproat. 2010. A Python toolkit for universal transliteration. In <i>Proceedings of the International Conference on Language Resources and Evaluation (LREC)</i>, Valletta, Malta.
+      <P>Christian Monson, Kristy Hollingshead, and Brian Roark. 2010. <a href="publications/monson_etal-morpho09.pdf">Simulating morphological analyzers with stochastic taggers for confidence estimation</a>. To appear in <i>Multilingual Information Access Evaluation, Vol. I, 10th Workshop of the Cross-Language Evaluation Forum (CLEF 2009), Revised Selected Papers</i>. Lecture Notes in Computer Science, Springer.
+      <P>Brian Roark and Kristy Hollingshead. 2009. <A HREF="http://aclweb.org/anthology-new/N/N09/N09-1073.pdf">Linear complexity context-free parsing pipelines via chart constraints</A>. In <i>Proceedings of the Human Language Technology Conference of the North American Chapter of the Association for Computational Linguistics (HLT-NAACL)</i>, pages 647-655, Boulder CO, USA. 
+      <P>Brian Roark and Kristy Hollingshead. 2008. <A HREF="http://www.aclweb.org/anthology-new/C/C08/C08-1094.pdf">Classifying chart cells for quadratic complexity context-free inference</A>. In <i>Proceedings of the 22nd International Conference on Computational Linguistics (COLING)</i>, pages 745-752, Manchester, UK.
+      <P>Kristy Hollingshead and Brian Roark. 2008. <A HREF="http://speech.bme.ogi.edu/publications/ps/hollingshead08.pdf">Reranking with baseline system scores and ranks as features</A>. Technical Report CSLU-08-001, CSLU, OHSU.
+      <P>Fan Yang, Peter A. Heeman, Kristy Hollingshead, and Susan E. Strayer. 2008. <A HREF="http://journals.cambridge.org/action/displayIssue?jid=NLE&volumeId=14&issueId=01&iid=1513008#">DialogueView: Annotating dialogues in multiple views with abstraction</A>. In <i>Natural Language Engineering</i>, 14(1), pages 3-32.
+      <P>Kristy Hollingshead and Brian Roark. 2007. <A HREF="http://www.aclweb.org/anthology-new/P/P07/P07-1120.pdf">Pipeline Iteration</A>. In <i>Proceedings of the 45th Annual Meeting of the Association for Computational Linguistics (ACL)</i>, pages 952-959, Prague, Czech Republic.
+      <P>Brian Roark, Margaret Mitchell, and Kristy Hollingshead. 2007. <A HREF="http://www.aclweb.org/anthology-new/W/W07/W07-1001.pdf">Syntactic complexity measures for detecting Mild Cognitive Impairment</A>. In <i>Proceedings of the ACL 2007 Workshop on Biomedical Natural Language Processing (BioNLP)</i>, pages 1-8, Prague, Czech Republic.
+      <P>Kristy Hollingshead, Seeger Fisher, and Brian Roark. 2005. <A HREF="http://www.aclweb.org/anthology-new/H/H05/H05-1099.pdf">Comparing and combining finite-state and context-free parsers</A>. In <i>Proceedings of the Human Language Technology Conference and Conference on Empirical Methods in Natural Language Processing (HLT/EMNLP)</i>, pages 787-794, Vancouver BC.
+      <P>Fan Yang, Peter A. Heeman, and Kristy Hollingshead. 2004. <A HREF="http://speech.bme.ogi.edu/publications/ps/yang04.pdf">Towards understanding mixed-initiative in task-oriented dialogues</A>. In <i>Proceedings of the 8th International Conference on Spoken Language Processing (ICSLP - INTERSPEECH&nbsp;2004)</i>, pages 217-220, Jeju Island, Korea.
+      <P>Kristy Hollingshead and Peter A. Heeman. 2004. <A HREF="http://speech.bme.ogi.edu/publications/ps/hollingshead04.pdf">Using a uniform-weight grammar to model disfluencies in stuttered read speech: a pilot study</A>. Technical Report CSLU-04-002, CSLU, OGI - OHSU.
+    </TD>
+  </TR>
+  <TR>
+    <TD class="left">
+      <P class="section">Teaching</P>
+    </TD>
+    <TD class="right">
+         <P><A HREF="http://www.cslu.ogi.edu/~hollingk/teaching.html">All</A> of the tutorials, lectures, and classes I've taught over the years.
+         <P>Winter 2010: I taught <A HREF="http://www.cslu.ogi.edu/~hollingk/NLP-w10.html">NLP (CSE 562/662)</A> with Brian Roark.
+         <P>Fall 2009: I taught a small <A HREF="http://www.cslu.ogi.edu/~hollingk/CL_tutorial.html">tutorial</A> for Computational Linguistics (CSE 506/606), very similar to my <A HREF="http://www.cslu.ogi.edu/~hollingk/NLP_tutorial.html">NLP tutorials</A>.
+         <P>Summer 2008: At the <A HREF="http://www.clsp.jhu.edu/workshops/ws08/summerschool.php">JHU Summer School on Human Language Technology</A>, I taught a <A HREF="http://www.clsp.jhu.edu/wiki2/Pronunciations_Lab">lab session</A> on pronunciation modeling using the AT&amp;T <A HREF="http://www.research.att.com/~fsmtools/fsm/">FSM</A> library.
+         <P>Fall 2008: I gave a <A HREF="http://www.cslu.ogi.edu/~hollingk/presentations/NLP_lec17.pdf">Syntax in Machine Translation</A> guest lecture in NLP (CSE 562/662).
+         <P>Winter 2006, 2007; Fall 2008: I taught two small <A HREF="http://www.cslu.ogi.edu/~hollingk/NLP_tutorial.html">tutorials</A> for NLP (CSE 562/662).
+         <P>Spring 2008: I gave an <A HREF="http://www.cslu.ogi.edu/~hollingk/presentations/TLS_lec4.pdf">Introduction to Machine Translation</A> lecture in Text-Based Language Processing Systems (CSE 554/654).
+         <P>Spring 2007: I lectured on <A HREF="http://www.cslu.ogi.edu/~hollingk/presentations/BLS_lec7.pdf">approximate matching algorithms</A> in Biological and Linguistic Sequence Analysis (CSE 555/655).
+         <P>Fall 2003: I co-taught a small introduction to Tcl <A HREF="http://www.cslu.ogi.edu/~hollingk/AI_tutorial.html">tutorial</A> for AI (CSE 560).
+    </TD>
+  </TR>
+  <TR>
+    <TD class="left">
+      <P class="section">Software</P>
+    </TD>
+    <TD class="right">
+      <P>For my dissertation, I made some changes to <A HREF="web.science.mq.edu.au/~mjohnson/">Mark Johnson</A>'s <A HREF="ftp://ftp.cs.brown.edu/pub/nlparser/reranking-parserAug06.tar.gz">reranker code</A>, to make the code run in a smaller footprint. [<A HREF="code/wlle_footprint.tgz">tgz</A>] (my changes only)
+      <P>I also made some changes to <A HREF="http://www.cs.brown.edu/~dmcc/">David McClosky</A>'s <A HREF="http://www.cs.brown.edu/~dmcc/software/parsedyff/">ParseDyff</A> software: [<A HREF="code/parsedyff-0.2.tgz">tgz</A>] (bin/nodesdiff calls my version)
+      <P>Finally, I made heavy use of a tagger that we began writing in 2003, which we call the <A HREF="code/tagger/">CSLU tagger (CSLUt)</A>. If requested, I am willing to e-mail the source code.
+    </TD>
+  </TR>  
+<!--  <TR>
+    <TD class="left">
+      <P class="section">Learning</P>
+    </TD>
+    <TD class="right">
+      <P><A HREF="classes.html">Classes</A> I've taken at OGI.</P>
+    </TD>
+  </TR>-->
+  <TR>
+    <TD class="left">
+      <P class="section">Education</P>
+    </TD>
+    <TD class="right">
+      <P>PhD *
+         <A HREF="http://www.ogi.edu">OGI</A> - <A HREF="http://www.ohsu.edu">OHSU</A> * 2010</P>
+      <P>MS in Computer Science &amp; Engineering *
+         <A HREF="http://www.ogi.edu">OGI</A> - <A HREF="http://www.ohsu.edu">OHSU</A> * 2004</P>
+      <P>BA in Creative Writing * <A HREF="http://www.colorado.edu">University of Colorado - Boulder</A> * 2000</P>
+    </TD>
+  </TR>
+  <TR>
+    <TD class="left">
+      <P class="section">Awards</P>
+    </TD>
+    <TD class="right">
+      <P><A HREF="http://www.nsf.gov/funding/pgm_summ.jsp?pims_id=6201&org=DGE&from=home">National Science Foundation Graduate Research Fellowship</A> * 2004-2007</P>
+      <P>Dolf Dolson Award Recipient</A> * 2003</P>
+      <!--<P>Valedictorian of <A HREF="http://jeffcoweb.jeffco.k12.co.us/high/chatfield/">Chatfield Senior High School</A> * 1996</P>-->
+    </TD>
+  </TR>
+  <TR>
+    <TD class="left">
+      <P class="section">News</P>
+    </TD>
+    <TD class="right">
+      <P>On 18 August 2010, I received the final signature indicating successful completion of all PhD requirements.<br>The diploma itself will be issued on 3 September 2010.
+      <P>On 23 June 2010, I successfully defended my dissertation.
+      <!--<P>On 13 June 2008, I successfully defended my dissertation proposal.-->
+      <!--<P>On 31 July 2005, I learned that my very first first-author paper would be published at HLT-EMNLP 05!-->
+      <P>On 24 March 2004, I received notice that I have been selected to receive the <A HREF="http://www.nsf.gov/funding/pgm_summ.jsp?pims_id=6201&org=DGE&from=home">NSF GRF</A>!
+      <P>On 14 May 2004 I passed the <A HREF="http://www.ogi.edu/csee/PHD/phd_rpexam.cfm">RPE</A> (OGI's version of quals)!</P>
+    </TD>
+  </TR>
+  <TR>
+    <TD class="left">
+      <P class="section">Links</P>
+    </TD>
+    <TD class="right">
+      <P>The <a href="http://www.aclweb.org/anthology-new/">ACL Anthology</a> is a great resource.</P>
+      <P>I always forget where my <a href="https://mailhost.csee.ogi.edu/horde/">CSEE e-mail</a> is. <!--And never knew where my <a href="https://smgw4.ohsu.edu/messenger/">OHSU e-mail</a> was.--></P>
+    </TD>
+  </TR>
+  <TR>
+    <TD class="left">
+      <P class="section"></P>
+    </TD>
+    <TD class="right">
+      <P style="font-size: x-small;">Page modified 19 August 2010.</P>
+    </TD>
+  </TR>
+
+</table></body>
+
+</html>
