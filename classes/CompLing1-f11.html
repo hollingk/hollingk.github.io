@@ -1,0 +1,295 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<title>Computational Linguistics 1 - Fall 2011</title>
+<style type='text/css'>
+BODY
+{
+    COLOR: #000000;
+    FONT-FAMILY: Times;
+    BACKGROUND-COLOR: maroon;
+}
+TD.left
+{
+    BACKGROUND-COLOR: maroon;
+    WIDTH: 5%;
+    VERTICAL-ALIGN: top;
+    TEXT-ALIGN: right;
+}
+TD.right
+{
+    BACKGROUND-COLOR: white;
+    WIDTH: 95%;
+    VERTICAL-ALIGN: top;
+}
+TBODY TD
+{
+    FONT-SIZE: small;
+}
+A
+{
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none;
+    COLOR: maroon;
+}
+A:hover
+{
+    COLOR: firebrick;
+    TEXT-DECORATION: none
+}
+P
+{
+    MARGIN-LEFT: 0in;
+    FONT-SIZE: small;
+}
+P.section
+{
+    MARGIN-RIGHT: 0in;
+    FONT-SIZE: medium;
+    FONT-WEIGHT: bold;
+    COLOR: white;
+}
+</style>
+<style type="text/css"> span.flipify { unicode-bidi:bidi-override; direction: rtl; }</style>
+</head>
+
+<body>
+<table border="0" cellpadding="12" cellspacing="4" width="100%" style="font-size: small">
+  <TR>
+    <TD class="left">
+      <img border="0" src="fsa_net.jpg" alt="automaton of a sentence" width="200">
+    </TD>
+    <TD class="right">
+      <h2>Computational Linguistics 1</h2>
+      <h3>CMSC/LING 723; LBSC 774</h3>
+      <h3>Fall 2011</h3>
+      <p><b>Class time</b>: Tue/Thu 2:00 - 3:15pm &nbsp;&nbsp; 1 Sept - 19 Dec, 2011
+      <p><b>Class location</b>: <a href="http://www.umd.edu/CampusMaps/bld_detail.cfm?bld_code=CSI">CSI</a> 2107
+      <p><b>Instructor</b>: <a href="http://hollingk.github.io/">Kristy Hollingshead Seitz</a>
+      <br><b>Email</b>: <span class="flipify">moc.liamg@kgnilloh</span>
+      <br><b>Office hours</b>: AVW 3155, for one hour after class and by appointment
+      <p><b>TA</b>: Aleksandrs Ecins
+      <br><b>Email</b>: <span class="flipify">ude.dmu.sc@snicea</span>
+      <br><b>Office hours</b>: AVW <s>4470</s> 3444 Tue/Thu 1:00 - 2:00pm
+      <p><b>Homework submission email</b>: <span class="flipify">moc.liamg@1102llaf.327gnilpmoc</span>
+      <p><b>Course mailing list webpage</b>: <a href="http://groups.google.com/group/umd-cmsc723-fall-2011">groups.google.com/group/umd-cmsc723-fall-2011</a> (umd-cmsc723-fall-2011@googlegroups.com)
+     </P>
+    </TD>
+  </TR>
+<!--  <TR>
+    <TD class="left">
+      <P class="section"></P>
+    </TD>
+    <TD class="right">
+      <font size=+1>
+      <A HREF="#description">Course Description</A> &nbsp; |  &nbsp;
+      <A HREF="#textbooks">Textbook</A> &nbsp; |  &nbsp;
+      <A HREF="#schedule">Schedule</A> &nbsp; |  &nbsp;
+      <A HREF="#grading">Grading</A> &nbsp; |  &nbsp;
+      <A HREF="#policies">Policies</A>
+      </font>
+    </TD>
+  </TR>
+-->
+  <TR>
+    <TD class="left">
+      <P class="section">News</P>
+   </TD>
+    <TD class="right">
+      <P>Items of note will be posted in this section.
+      <P>11/14: <a href="hw5.CL1-f11.pdf">HW5</a>'s deadline has been extended to Nov 17, with an option to receive extra credit if turned in on the original deadline of Nov 15.
+      <P>11/4: <a href="hw5.CL1-f11.pdf">HW5</a> is now available and is due Nov 15.
+      <P>10/27: <a href="hw4.CL1-f11.pdf">HW4</a> is now available.
+      <P>10/25: HW4 will be due Nov 3.
+      <P>10/18: Class will be cancelled next Thursday, Oct 27.
+      <P>10/11: The midterm will now be given as a take-home midterm, handed out on Tuesday Oct 18, due back the next Tuesday, Oct 25.
+      <P>9/29: <a href="hw3.CL1-f11.pdf">HW3</a> is now available and is due Oct 13.
+      <P>9/22: <a href="hw2.CL1-f11.pdf">HW2</a> is now available and is due Sept 29.
+      <P>9/9: <a href="hw1.CL1-f11.pdf">HW1</a> is now available and now due on Sept 20.
+      <P>9/1: <a href="hw0.CL1-f11.pdf">HW0</a> is now available; Jimmy Lin's Python tutorial was added to the schedule page for today.
+      <P>8/26: The course <a href="http://hollingk.github.io/classes/CompLing1-f11-schedule.html">schedule</a> is up!
+      <P>8/20: First day of class is Thursday, September 1!
+   </TD>
+  </TR>
+  <TR>
+    <TD class="left">
+      <P class="section">Schedule</P>
+      <A NAME="schedule">
+    </TD>
+    <TD class="right">
+      The schedule of lectures, readings, and homeworks can be found
+      <a href="CompLing1-f11-schedule.html">here</a>.
+  </TD>
+  </TR>
+  <TR>
+    <TD class="left">
+      <P class="section">Course Description</P>
+      <A NAME="description">
+    </TD>
+    <TD class="right">
+      
+      <P>This is the first semester in our two-semester graduate
+      sequence in computational linguistics. During this semester, we
+      will focus on fundamental methods, algorithms, and data
+      structures in natural language processing. Topics include:
+      finite-state methods, context-free and extended context-free
+      models of syntax; parsing and semantic interpretation; n-gram
+      and Hidden Markov models, part-of-speech tagging; and
+      natural language applications. Students completing this course
+      will have a solid working knowledge of the basics of NLP and
+      will be well prepared for the second semester course, which
+      covers natural language processing with a focus on corpus-based
+      statistical techniques.
+      <P>This class fulfills the AI Area of the Computer
+      Science <a
+      href="http://www.cs.umd.edu/Grad/policy-manual.shtml">MS 
+      Comps</a> requirements. 
+      <P><b>Prerequisites</b>: There will be a fair amount of
+      programming required to complete the homeworks for this course,
+      and therefore some programming experience is assumed. There is
+      no official programming language for this course, but I strongly
+      recommend using <a href="http://www.python.org/">Python</a> and
+      the <a href="http://www.nltk.org/">NLTK toolkit</a> --
+      <em>particularly</em> if you are planning to continue on to
+      Computational Linguistics 2 next semester -- unless you have a
+      strong preference otherwise. You are expected to have a computer
+      on which you can complete the homework assignments.
+   </TD>
+  </TR>
+  <TR>
+    <TD class="left">
+      <P class="section">Textbook(s)</P>
+      <A NAME="textbooks">
+    </TD>
+    <TD class="right">
+      <P>The textbook for the course is:<br>Jurafsky and Martin,
+  <em><a href="http://www.amazon.com/Speech-Language-Processing-Daniel-Jurafsky/dp/0131873210/">Speech and Language Processing</a></em>.
+      <P>Approximately one third of the course readings will be
+      conference papers and journal articles, which will be accessible
+      online.
+    </TD>
+  </TR>
+  <TR>
+    <TD class="left">
+      <P class="section">Grading</P>
+      <A NAME="grading">
+    </TD>
+    <TD class="right">
+      <P>The purpose of grading, for this class, is to provide a
+      quantitative measurement of your progress and understanding in
+      the class, as well as a measurement of how well the class is
+      doing as a whole.
+      <table>
+      <tr><td><b>50%&nbsp;&nbsp;</b></td><td><b>Exams</b></td></tr>
+	<tr><td></td><td>25% each to midterm and final.</td></tr>
+      <tr><td><b>40%&nbsp;&nbsp;</b></td><td><b>Homeworks</b></td></tr>
+      <tr><td></td><td>There are 8 homeworks of varying difficulty
+	(and thus varying contribution to your grade). Homework is
+	important in this class, and so exams (which are worth much
+	more of your grade) will be designed such that completing and
+	correcting your homeworks will help you perform well on the
+	exams.</td></tr>
+      <tr><td><b>10%&nbsp;&nbsp;</b></td><td><b>Class Participation</b></td></tr>
+      <tr><td></td><td>I really like an interactive class. Come to
+	class, pay attention, do the readings, and contribute to class
+	discussions!</td></tr>
+     </table>
+     <br>Please note: the <b>CS MS Comp grade</b> (AI Area) will be
+     based entirely on the average of the midterm and final exam grades.
+</TD>
+  </TR>
+  <TR>
+    <TD class="left">
+      <P class="section">Policies</P>
+      <A NAME="policies">
+    </TD>
+    <TD class="right">
+      <P><b>Attendance</b>
+      <ul>
+	<li>Students who miss up to two classes for a medical reason must
+      make a reasonable effort to contact me in advance, and bring a
+      self-signed note upon return to class, acknowledging that the
+      information provided is accurate. Subsequent absences will
+      require medical documentation.
+	<li>Prolonged absences due to illness
+      (multiple consecutive absences) require written documentation
+      from a health care provider.
+	<li>Absence from either of the
+      <b>exams</b> due to illness also requires documentation from a
+      health care professional, as well as notifying me in advance
+      when possible.
+      <li>If you know you will miss class due to religious
+      observances, please notify me <em>in advance</em>, within the
+      first two weeks of class.
+	</ul>
+      <P><b>Homeworks</b>
+      <ul>
+	<li>Homeworks must be completed individually.
+	<li>Plaigiarism will not be tolerated, and will result in a
+      0. However, discussing class concepts amongst your classmates is
+      recommended and encouraged; generally, you can discuss concepts
+      and pseudo-code, but do not share actual code. Please visit the <a
+      href="http://www.shc.umd.edu/">Student Honor Council</a> website
+      for more information on the consequences of cheating, fabrication,
+      facilitation, and plagiarism.
+      </ul>
+      <P><b>Late and Incomplete Work</b>
+      <ul>
+	<li>Assigments are due at the beginning of class, typically by
+      e-mail to me and the TA unless otherwise noted.
+	<li>Homeworks
+      that are late will still be graded if handed in within 48 hours
+      of the deadline, but your score will automatically be
+      halved. Exceptions can be discussed in the case of medical or
+      family emergencies, but will only be considered <em>prior</em>
+      to the homework deadline. After 48 hours, homeworks will no
+      longer be accepted.
+	<li>I am unable to issue an 'Incomplete' grade. If an
+      emergency arises, discuss with me as soon as possible and we
+      will have to go to the department together.
+      </ul>
+      <P><b>Exams</b>
+      <ul>
+	<li>Exams will be in-class and open-book/open-note/open-laptop
+      (but not open-internet).
+      </ul>
+      <P><b>Students with Disabilities</b>
+      <ul><li>The campus's <a
+      href="http://www.counseling.umd.edu/DSS/">Disability Support
+      Service Office</a> (DSS) works with students and faculty to
+      address a variety of issues ranging from test anxiety to
+      physical and psychological disabilities. To receive
+      accommodations, students must first have their disabilities
+      documented by DSS. The office then prepares an Accommodation
+      Letter for course instructors regarding needed accommodations,
+      which needs to be presented to me, the instructor, at the
+      beginning of the semester (within the first three class
+      sessions).</ul>
+      <P><b>Class Cancellations</b>
+      <ul>
+	<li>Official closures and delays are announced on the <a
+      href="http://umd.edu">campus website</a> and the snow
+      phone line (301-405-SNOW), as well as on local radio and TV
+      stations. Information about possible rescheduling of course
+      activities will be provided via e-mail and on this website once
+      the campus has re-opened.
+	<li>If I am forced to cancel a class even though the
+      University is open, due to inclement weather or illness, I will
+      notify the class via e-mail (and on this website).
+      </ul>
+ </TD>
+  </TR>
+ <TR>
+    <TD class="left">
+      <P class="section"></P>
+    </TD>
+    <TD class="right">
+      <P style="font-size: x-small;">Page modified 11 October 2011.</P>
+    </TD>
+  </TR>
+
+</table></body>
+
+</html>

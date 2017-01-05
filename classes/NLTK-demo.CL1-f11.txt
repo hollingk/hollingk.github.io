@@ -1,0 +1,42 @@
+
+import nltk
+from nltk.util import clean_html
+from nltk.corpus import brown, stopwords, gutenberg, treebank
+from nltk import FreqDist
+from nltk.tokenize.treebank import TreebankWordTokenizer
+from nltk import ConditionalFreqDist
+from nltk.grammar import Nonterminal
+from nltk.corpus import wordnet as wn
+
+wn.synsets('dog')
+wn.synset('dog.n.01').definition
+dog = wn.synset('dog.n.01')
+dog.hyponyms()
+dog.member_holonyms()
+dog.hypernyms()
+
+s_tokenizer = nltk.data.load('tokenizers/punkt/english.pickle')
+w_tokenizer = TreebankWordTokenizer()
+stopwords_set = set(stopwords.words('english'))
+
+text = clean_html(open("data/cnn.txt").read())
+for ss in s_tokenizer.tokenize(clean_html(text))[:15]:
+   print list(w_tokenizer.tokenize(ss))
+
+fd = FreqDist()
+print gutenberg.fileids()
+for ii in gutenberg.words('austen-persuasion.txt'):
+  if not ii.lower() in stopwords_set and len(ii) > 2:
+    fd.inc(ii)
+
+print fd.keys()[:30]
+
+cfd = ConditionalFreqDist()
+for tree in treebank.parsed_sents()[:1000]:
+  for jj in tree.productions():
+    cfd[jj.lhs()].inc(jj.rhs())
+
+cfd[Nonterminal('NP')].keys()[:10]
+cfd[Nonterminal('NP')].freq((Nonterminal('NP'), Nonterminal('PP')))
+
+

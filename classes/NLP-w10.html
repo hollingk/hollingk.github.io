@@ -1,0 +1,233 @@
+<html><head><title>CSE 562/662: Syllabus</title></head>
+<body bgcolor="white">
+<h2>CSE 562/662 - Natural Language Processing</h2>
+<h3>Instructors: <A HREF="http://www.cslu.ogi.edu/people/roark">Brian Roark</A> and <A HREF="http://hollingk.github.io/">Kristy Hollingshead</A></h3>
+<h3>Class time: <em>Mon/Wed  4:00 - 5:30 PM &nbsp;&nbsp; Jan. 4 - Mar. 17, 2010 </em></h3>
+<h3>Class location: <em><a href="http://www.ogi.edu/maps/#3">Wilson Clark Center</a> - Room 403</em>
+<h4>Videoconferenced to OHSU's Marquam Hill Campus:<br><em>Biomedical Information Communication Center (BICC), Room 131b</em><br>(except on Jan.20 and Feb.24, when we will broadcast to the <em>Biomedical Research Building (BRB), Room 403</em>)</h4>
+<h3>Office hours: <em>Wed 11:00 AM - 1:00 PM, <a href="http://www.ogi.edu/maps/#7">Central</a> 129 (Kristy), or by appointment</em></h3>
+<h3>Required textbook: None</h3>
+<h3>Optional (suggested) textbook: Roark and Sproat, <em><a href="http://www.amazon.com/Computational-Approaches-Morphology-Syntax-Surveys/dp/0199274789/">Computational Approaches to Morphology and Syntax</a></em></h3>
+<h3>Also useful supplementary textbook: Jurafsky and Martin,
+ <em><a href="http://www.amazon.com/Speech-Language-Processing-Introduction-Computational/dp/0135041961/">
+Speech and Language Processing</a></em></h3>
+
+Skip to overview of <a href="#lectures">lectures</a>.
+
+<h2>Goals</h2>
+
+The goal of this course is to give a broad but detailed introduction
+to the key algorithms and modeling techniques used for Natural
+Language Processing (NLP) today.  With a few exceptions, NLP involves
+taking a sequence of words as input (e.g. a sentence) and returning
+some annotation(s) for that string.  Well-known examples of this
+include part-of-speech tagging and syntactic parsing.  Many other
+common tasks, e.g. shallow parsing or named-entity recognition, can be
+easily recast as tagging tasks; hence certain basic techniques can be
+widely applied within NLP.  Applications such as automatic speech
+recogntion, machine translation, information extraction, and question
+answering all make use of NLP techniques.  By the end of this course,
+you should understand how to approach common natural language problems
+arising in these and other applications.
+
+<h2>Prerequisites</h2>
+
+There is no official programming language for this course, but there
+will be a fair amount of programming required to complete assignments,
+hence facility with some programming language is assumed.
+
+<h2>Grading</h2>
+
+70% of your grade will depend on the homeworks, 15% on the final
+project, 10% on the final exam, and 5% on in-class participation.
+
+<h2>What we'll cover and an approximate schedule</h2>
+
+Roughly speaking, half of the course will be devoted to finite-state
+methods, and half to context-free methods (or beyond).  Algorithms for
+annotating linguistic structure  will always be presented with
+statistical variants, which provide the basis for disambiguation.<br><br>
+
+<a name="lectures">
+<table border=1>
+
+<tr><td>Date </td>
+<td>Topic</td>
+<td>Reading</td>
+<td align="center">Assignment</td>
+<td align="center">FAQs</td>
+<td>Video</td></tr>
+
+<tr><td>&nbsp;</td>
+<th colspan=5 align="left"><b>Finite-state/tagging models</b></th></tr>
+
+<tr><td valign="top">1/4</td>
+<td valign="top">Introduction to NLP; overview of class structure;<br>
+homework and term project options; <a href="http://hollingk.github.io/tutorials/NLP_tutorial.html">tutorial</a> options</td>
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td valign="top">1/6</td>
+<td valign="top">Dynamic programming for finite-state models: Viterbi search</td>
+<td valign="top">sections 6.3 &amp; 6.3.1<br>of <u>Roark&amp;Sproat</u></td>
+<td align="center" valign="top">HW1</td>
+<td valign="top">&nbsp;FAQ1&nbsp;</td>
+<td valign="top">&nbsp;</td></tr>
+
+<tr><td valign="top">1/11</td>
+<td valign="top">More dynamic programming: Forward-Backward search;<br>other finite-state tagging tasks</td>
+<td valign="top">sections 6.3.3 &amp; 6.4<br>of <u>Roark&amp;Sproat</u></td>
+</td><td>&nbsp;</td><td>&nbsp;</td>
+<td valign="top">&nbsp;</td></tr>
+
+<tr><td valign="top">1/13</td>
+<td>Language modeling</td>
+<td><a href="http://research.microsoft.com/en-us/um/people/joshuago/tr-10-98.pdf">CG98</a></td><td>&nbsp;</td><td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+
+<tr><td valign="top">1/18</td>
+<td bgcolor="silver" valign="top">No class -- MLK Jr Day</td>
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td valign="top">1/20</td>
+<td>Dependency parsing</td>
+<td>&nbsp;</td>
+<td align="center" valign="top">&nbsp;HW2&nbsp;<!--HW-Dep--></td>
+<td>&nbsp;</td>
+<td valign="top">&nbsp;</td></tr>
+
+<tr><td valign="top">1/25</td>
+<td>Ambiguity on input and output; n-best lists and lattices;<br>Pipeline systems &amp; intro to our text processing "pipeline"</td>
+<td><a href="http://acl.ldc.upenn.edu/P/P07/P07-1120.pdf">HR07</a><br><a href="http://dx.doi.org/10.1006/csla.2001.0169">Norm01</a></td>
+<td>&nbsp;</td><td>&nbsp;</td>
+<td valign="top">&nbsp;</td></tr>
+
+<tr><td>1/27</td>
+<td>Alignment in Machine Translation</td>
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+
+<tr><td>2/1</td>
+<td>Graph-based methods in NLP</td>
+<td><a href="http://www.aclweb.org/anthology/H/H05/H05-1115.pdf">OER05</a>;
+<a href="http://www.cs.unt.edu/~rada/papers/mihalcea.emnlp05a.pdf">Mil05</a></td>
+<td>&nbsp;</td><td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+
+<tr><td>&nbsp;</td>
+<th colspan=5 align="left"><b>Context-free/parsing models</b></th></tr>
+
+<tr><td>2/3</td>
+<td>Context-free grammars (CFGs)</td>
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+
+<tr><td>2/8</td>
+<td>Context-free parsing: CYK</td>
+<td>&nbsp;</td><td align="center">&nbsp;HW3&nbsp;<!--HW-Parse1--></td><td>&nbsp;FAQ3&nbsp;</td>
+<td>&nbsp;</td></tr>
+
+<tr><td>2/10</td>
+<td>More context-free parsing</td>
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+
+<tr><td>2/15</td>
+<td bgcolor="silver">No class -- Presidents' Day</td>
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+<tr><td>2/17</td>
+<td>Bi-text parsing</td>
+<td><a href="http://aclweb.org/anthology-new/P/P05/P05-1033.pdf">Chi05</a>;
+    <a href="http://www.isi.edu/~chiang/papers/synchtut.pdf">CKtut06</a>
+</td><td>&nbsp;</td><td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+
+<tr><td>2/22</td>
+<td>Advanced context-free parsing: grammar transformations</td>
+<td>&nbsp;</td>
+<td align="center">&nbsp;HW4&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+
+<tr><td>&nbsp;</td>
+<th colspan=5 align="left"><b>Beyond context-free; semantics and meaning</b></th></tr>
+
+<tr><td>2/24</td>
+<td>Context-sensitive grammars: Unification, TAG, CCG</td>
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+
+<tr><td valign="top">3/1</td>
+<td valign="top">Machine learning in NLP (for sequence processing)</td>
+<td> <a href="http://www.aclweb.org/anthology-new/W/W02/W02-1001.pdf">Col02</a>; <a href="http://lhncbc.nlm.nih.gov/lhc/docs/published/2007/pub2007004.pdf">DFL07</a>; <a href="http://www.aclweb.org/anthology-new/N/N03/N03-1028.pdf">SP03</a>;<br><a href="http://www.cs.umass.edu/~mccallum/papers/crf-icml01.ps">LMP01</a>; <a href="http://www.cs.umass.edu/~mccallum/papers/crf-tutorial.pdf">SMtut06</a></td>
+<td>&nbsp;</td><td>&nbsp;</td>
+<td valign="top">&nbsp;</td></tr>
+
+<tr><td valign="top">3/3</td>
+<td>HW4 student-presentations<br>Semantics: WSD, NP coreference, semantic role labeling</td><td>&nbsp;</td>
+<td align="center" valign="top">&nbsp;HW5&nbsp;<!--HW-ML--></td>
+<td valign="top">&nbsp;FAQ5&nbsp;</td>
+<td valign="top">&nbsp;</td></tr>
+
+<tr><td>3/8</td>
+<td>Information Retrieval (IR) and Question Answering (QA)</td>
+<td><a href="http://www.ploscompbiol.org/article/info:doi/10.1371/journal.pcbi.0040020">CH08</a>; <A HREF="http://www.aclweb.org/anthology-new/P/P02/P02-1006.pdf">RH02</A></td>
+<td>&nbsp;</td><td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+
+<tr><td valign="top">3/10</td>
+<td valign="top">Co-reference resolution, Information Extraction (IE), and<br>Automatic Summarization</td>
+<td valign="top"><a href="http://acl.ldc.upenn.edu/P/P05/P05-1046.pdf">GKM05</a></td>
+<td>&nbsp;</td><td>&nbsp;</td>
+<td valign="top">&nbsp;</td></tr>
+
+<tr><td valign="top">3/15</td><td>Class summary; surveying the state-of-the-art: existing systems<br>and system competitions, likely future research directions</a></td>
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+<td valign="top">&nbsp;&nbsp;</td></tr>
+
+<tr><td>3/17</td>
+<td>Final Exam</td>
+<td>&nbsp;</td><td align="center">&nbsp;Final Projects<br>(due)&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+</table>
+
+</a>
+<br><br>
+
+References:<br>
+
+<table>
+<tr><td valign="top"><a href="http://research.microsoft.com/en-us/um/people/joshuago/tr-10-98.pdf">CG98</a></td><td>&nbsp;&nbsp;&nbsp;</td><td>Stanley Chen and Joshua Goodman. An empirical study of smoothing techniques for language modeling. Technical report TR-10-98, Harvard University, August 1998.</td></tr>
+
+<tr><td valign="top"><a href="http://aclweb.org/anthology-new/P/P05/P05-1033.pdf">Chi05</a></td><td>&nbsp;&nbsp;&nbsp;</td><td>David Chiang.  A hierarchical phrase-based model for statistical machine translation. <em>Proceedings of the Annual Meeting of the ACL</em>, pp. 263-270, 2005.</td></tr>
+
+<tr><td valign="top"><a href="http://www.isi.edu/~chiang/papers/synchtut.pdf">CKtut06</a></td><td>&nbsp;&nbsp;&nbsp;</td><td>David Chiang and Kevin Knight.  An introduction to synchronous grammars: part of a tutorial given at ACL 2006.</td></tr>
+
+<tr><td valign="top"><a href="http://www.ploscompbiol.org/article/info:doi/10.1371/journal.pcbi.0040020">CH08</a></td><td>&nbsp;&nbsp;&nbsp;</td><td>K. Bretonnel Cohen and Lawrence Hunter.  Getting started in text mining. <em>PLoS Computational Biology</em>, 4(1), 2008.</td></tr>
+
+<tr><td valign="top"><a href="http://www.aclweb.org/anthology-new/W/W02/W02-1001.pdf">Col02</a></td><td>&nbsp;&nbsp;&nbsp;</td><td>Michael Collins. Discriminative training methods for Hidden Markov Models: theory and experiments with perceptron algorithms. <em>Proceedings of the 2002 Conference on Empirical Methods in Natural Language Processing (EMNLP)</em>, pp. 1-8, 2002.</td></tr>
+
+<tr><td valign="top"><a href="http://lhncbc.nlm.nih.gov/lhc/docs/published/2007/pub2007004.pdf">DFL07</a></td><td>&nbsp;&nbsp;&nbsp;</td><td>Dina Demner-Fushman and Jimmy Lin. Answering Clinical Questions with Knowledge-Based and Statistical Techniques. <em>Computational Linguistics</em>, 33(1):63-103, 2007.</td></tr>
+
+<tr><td valign="top"><a href="http://acl.ldc.upenn.edu/P/P05/P05-1046.pdf">GKM05</a></td><td>&nbsp;&nbsp;&nbsp;</td><td>Trond Grenager, Dan Klein and Chris Manning. Unsupervised Learning of Field Segmentation Models for Information Extraction. <em>Proceedings of the 43rd Annual Meeting of the Association for Computational Linguistics (ACL)</em>, pp. 371-378, 2005.</td></tr>
+
+<tr><td valign="top"><a href="http://acl.ldc.upenn.edu/P/P07/P07-1120.pdf">HR07</a></td><td>&nbsp;&nbsp;&nbsp;</td><td>Kristy Hollingshead and Brian Roark.  Pipeline Iteration. <em>Proceedings of the 45th Annual Meeting of the Association for Computational Linguistics (ACL)</em>, pp. 952-959, 2007.</td></tr>
+
+<tr><td valign="top"><a href="http://www.cs.umass.edu/~mccallum/papers/crf-icml01.ps">LMP01</a></td><td>&nbsp;&nbsp;&nbsp;</td><td>John Lafferty, Andrew McCallum, and Fernando Pereira. Conditional Random Fields: probabilistic models for segmenting and labeling sequence data. <em> Proceedings of the International Conference on Machine Learning (ICML)</em>, 2001.</td></tr>
+
+<tr><td valign="top"><a href="http://www.cs.unt.edu/~rada/papers/mihalcea.emnlp05a.pdf">Mil05</a></td><td>&nbsp;&nbsp;&nbsp;</td><td>Rada Mihalcea. Unsupervised Large-Vocabulary Word Sense Disambiguation with Graph-based Algorithms for Sequence Data Labeling. <em>Proceedings of HLT-EMNLP</em>, 2005.</td></tr>
+
+<tr><td valign="top"><a href="http://tangra.si.umich.edu/~radev/papers/hltemnlp05.pdf">OER05</a></td><td>&nbsp;&nbsp;&nbsp;</td><td>Jahna Otterbacher, Gunes Erkan and Dragomir R. Radev. Using Random Walks for Question-focused Sentence Retrieval. <em>Proceedings of HLT-EMNLP</em>, 2005.</td></tr>
+
+<tr><td valign="top"><a href="http://www.aclweb.org/anthology-new/P/P02/P02-1006.pdf">RH02</a></td><td>&nbsp;&nbsp;&nbsp;</td><td>Deepak Ravichandran and Eduard Hovy.  Learning Surface Text Patterns for a Question Answering System. <em>Proceedings of the 40th Annual Meeting of the Association for Computational Linguistics (ACL)</em>, pp. 41-47, 2002.</td></tr>
+
+<tr><td valign="top"><a href="http://www.aclweb.org/anthology-new/N/N03/N03-1028.pdf">SP03</a></td><td>&nbsp;&nbsp;&nbsp;</td><td>Fei Sha and Fernando Pereira. Shallow parsing with conditional random fields. <em>Proceedings of the HLT-NAACL Annual Meeting</em>, pp. 134-141, 2003.</td></tr>
+
+<tr><td valign="top"><a href="http://dx.doi.org/10.1006/csla.2001.0169">Norm01</a></td><td>&nbsp;&nbsp;&nbsp;</td><td>Richard Sproat, Alan Black, Stanley Chen, Shankar Kumar, Mari Ostendorf, and Christopher Richards.  Normalization of non-standard words.<em> Computer Speech and Language</em>, 15(3):287-333, 2001.</td></tr>
+
+<tr><td valign="top"><a href="http://www.cs.umass.edu/~mccallum/papers/crf-tutorial.pdf">SMtut06</a></td><td>&nbsp;&nbsp;&nbsp;</td><td>Charles Sutton and Andrew McCallum. An introduction to Conditional Random Fields for relational learning. Book chapter in <em>Introduction to Statistical Relational Learning</em>. Edited by Lise Getoor and Ben Taskar. MIT Press, 2006.</td></tr>
+</table>
+
+<br><br>
+
+</body></html>
